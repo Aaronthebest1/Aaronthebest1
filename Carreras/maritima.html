@@ -1,0 +1,26 @@
+{% extiende "ssc/base.html" %}
+{% carga estática %}
+
+{% block head_title %}INGENIERIA MARITIMA{% endblock head_title %}
+//REQUISITOS//
+
+<tbody>
+    <tr>
+
+        <td>{{estudiante.nombre}}</td>
+        <td>{{estudiante.id}}</td>
+        <td>{{estudiante.cohorte}}</td>
+        <td>{{}}</td>
+
+    </tr>
+</tbody>
+
+
+def estudiante_list(request):
+    estudiante = Estudiante.objects.all()
+    contexto = {'estudiante':estudiante}
+    return render(request, 'estudiante_list.html', contexto)
+
+{% contenido del bloque %}
+ssc_student_list
+{% contenido de bloque final %}
